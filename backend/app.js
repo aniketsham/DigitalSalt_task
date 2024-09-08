@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 
 const app=express()
 app.use(cors({
-    origin:["http://localhost:3000"],
+    origin:["https://user-manager-digitalsalt-task.netlify.app"],
     methods:["GET","POST","PUT","DELETE"],
     credentials:true,
 }))
