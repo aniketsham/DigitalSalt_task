@@ -195,7 +195,8 @@ const sendToken=(user,statusCode,res,message)=>{
         expires:new Date(
             Date.now()+ (10 * 24 * 60 * 60 * 1000)
         ),
-        
+        httpOnly:true,
+        secure:true
         
     };
     res.status(statusCode).cookie("token",token,options).json({
