@@ -3,6 +3,8 @@ import userRouter from "./Routes/UserRoutes.js";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import { errorMiddleware } from "./middleware/errorMiddleware.js";
+
 
 const app=express()
 app.use(cors({
@@ -26,4 +28,5 @@ const connection=()=>{
 connection();
 
 app.use("/api",userRouter);
+app.use(errorMiddleware);
 export default app;
