@@ -3,7 +3,7 @@ import {User} from '../models/userSchema.js'
 import ErrorHandler from './errorMiddleware.js';
 export const isAuthenticated=async(req,res,next)=>{
    const {token}=req.cookies;
-    console.log(req.cookies);
+    
     if(!token){
         return next(new ErrorHandler("User is not authenticated",400))
     }
